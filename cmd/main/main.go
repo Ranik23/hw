@@ -2,7 +2,6 @@ package main
 
 import (
 	"database/sql"
-	"fmt"
 	"hw/internal/seed"
 	"log"
 
@@ -21,14 +20,12 @@ func connectDB() *sql.DB {
 func main() {
 	db := connectDB()
 	defer db.Close()
-
 	//seed.GenerateAndInsertAuthors(db)
 	//seed.GenerateAndInsertBooks(db)
 	//seed.GenerateAndInsertGenres(db)
-	seed.GenerateAndInsertSubscribers(db)
-	seed.GenerateAndInsertM2MBooksAuthors(db)
+	//seed.GenerateAndInsertSubscribers(db)
+	//seed.GenerateAndInsertM2MBooksAuthors(db)
 	seed.GenerateAndInsertM2MBooksGenres(db)
-	seed.GenerateAndInsertSubscriptions(db)
+	// seed.GenerateAndInsertSubscriptions(db)
 
-	fmt.Println("Data inserted successfully!")
 }

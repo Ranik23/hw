@@ -8,7 +8,6 @@ migrate-up: create-db
 
 migrate-down:
 	go run cmd/migrator/main.go -command=down
-
-
+	
 run:
 	go run cmd/main/main.go
